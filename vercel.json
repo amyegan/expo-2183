@@ -1,0 +1,17 @@
+{
+  "buildCommand": "expo export -p web",
+  "outputDirectory": "dist/client",
+  "installCommand": "npm install",
+  "devCommand": "expo start --web",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": "dist/server/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.ts"
+    }
+  ]
+}
